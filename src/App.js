@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import asana from "asana";
+import "./App.css";
+import TaskList from "./components/TaskList/TaskList.component";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const client = asana.Client.create().useAccessToken(
+  "0/2666640935648a97886c69208f2b3f51"
+);
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      employee: []
+    };
+  }
+
+  componentDidMount() {
+    client.users
+      .me()
+      .then(user =>
+        client.users.findAll({
+          workspace: user.workspaces[1].gid
+        })
+      )
+      .then(users =>
+        this.setState({
+          employee: users.data.filter(
+            user =>
+              user.name !== "Luis Izquierdo" && user.name !== "Héctor Riquelme" && user.name !== "mquinteros" && user.name !== "pedro"
+          )
+        })
+      );
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Tareas en curso oficina central</h1>
+        {this.state.employee.map(employee => (
+          <div key={employee.gid}>
+            <h2>{employee.name}</h2>
+            <TaskList gid={employee.gid}></TaskList>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
 export default App;

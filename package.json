@@ -1,17 +1,24 @@
 {
   "name": "asana-tecton",
   "version": "0.1.0",
+  "homepage": "https://tonicanada.github.io/asana-tecton",
   "private": true,
   "dependencies": {
+    "asana": "^0.17.3",
+    "gh-pages": "^2.1.1",
+    "moment": "^2.24.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "util": "^0.12.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
