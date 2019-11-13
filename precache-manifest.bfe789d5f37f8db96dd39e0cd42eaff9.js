@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e71d73f2ced317a598c763623c708d91",
+    "revision": "946a6455c3321761c002d32b9379025a",
     "url": "/asana-tecton/index.html"
   },
   {
-    "revision": "3b2b719f3cd30b3b5ec4",
+    "revision": "5af15845f2cf122c2ab0",
     "url": "/asana-tecton/static/css/main.b100e6da.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/asana-tecton/static/js/2.a98c27ea.chunk.js"
   },
   {
-    "revision": "3b2b719f3cd30b3b5ec4",
-    "url": "/asana-tecton/static/js/main.c6d4573e.chunk.js"
+    "revision": "5af15845f2cf122c2ab0",
+    "url": "/asana-tecton/static/js/main.6f91bec1.chunk.js"
   },
   {
     "revision": "582f50c5281b6207f813",
