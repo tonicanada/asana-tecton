@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/asana-tecton/precache-manifest.4efb1045dc533e54629249cfb941d481.js"
+  "/asana-tecton/precache-manifest.dc09df1fcdd66c69ab2eb4a6e90552b4.js"
 );
 
 self.addEventListener('message', (event) => {
