@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import asana from "asana";
 
 const client = asana.Client.create().useAccessToken(
-  "0/2666640935648a97886c69208f2b3f51"
+  process.env.REACT_APP_ASANA_API_KEY
 );
 
 class TaskList extends Component {

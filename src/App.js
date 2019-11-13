@@ -3,8 +3,9 @@ import asana from "asana";
 import "./App.css";
 import TaskList from "./components/TaskList/TaskList.component";
 
+
 const client = asana.Client.create().useAccessToken(
-  "0/2666640935648a97886c69208f2b3f51"
+  process.env.REACT_APP_ASANA_API_KEY
 );
 
 class App extends Component {
@@ -28,7 +29,10 @@ class App extends Component {
         this.setState({
           employee: users.data.filter(
             user =>
-              user.name !== "Luis Izquierdo" && user.name !== "Héctor Riquelme" && user.name !== "mquinteros" && user.name !== "pedro"
+              user.name !== "Luis Izquierdo" &&
+              user.name !== "Héctor Riquelme" &&
+              user.name !== "mquinteros" &&
+              user.name !== "pedro"
           )
         })
       );
